@@ -20,3 +20,8 @@ Shadcn
 Framer motion
 Sonner(toast)
 Lucid react (icons)
+
+#### How to implement Sonner
+toast.success("Profile updated")
+toast.error("Something went wrong")
+toast.loading("Uploading...")
