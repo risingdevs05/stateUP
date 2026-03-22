@@ -1,65 +1,115 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main>
+      <Navbar />
+
+      {/* HERO */}
+      <section className="relative h-screen flex items-center justify-center text-center">
+        <img
+          src="/hero.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
+        <div className="absolute inset-0 bg-black/30 hero-gradient" />
+
+        <div className="relative z-10 text-white px-6">
+          <p className="tracking-widest uppercase mb-4">
+            Some places are seen…
+          </p>
+
+          <h1 className="text-6xl md:text-8xl font-bold mb-6">
+            Some places are felt.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="text-xl italic">
+            Uttar Pradesh is one of them.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* IDENTITY */}
+      <section className="py-32 px-6 text-center">
+        <p className="tracking-widest uppercase mb-4 text-red">
+          Not just a state…
+        </p>
+        
+        <h2 className="text-5xl font-bold mb-6">
+          This is where India begins.
+        </h2>
+
+        <p className="max-w-2xl mx-auto text-lg text-on-surface-variant">
+          From ancient cities to living traditions, every corner carries a story. A landscape where the divine meets the temporal, weaving a tapestry of civilization that spans millennia.
+        </p>
+      </section>
+
+      {/* SPIRITUAL */}
+      <section className="py-32 px-6 bg-surface-container-low grid lg:grid-cols-2 gap-12 items-center">
+        
+        <div>
+          <h2 className="text-5xl font-bold mb-6">
+            They start with chants.
+          </h2>
+
+          <p className="text-lg text-on-surface-variant">
+            Varanasi, Ayodhya, Mathura—faith lives here.
+          </p>
         </div>
-      </main>
-    </div>
+
+        <div>
+          <img
+            src="/ganga.jpg"
+            className="rotate-3 rounded-xl shadow-xl"
+          />
+          <div className="relative max-w-md rounded-2xl bg-white/90 backdrop-blur-md shadow-xl p-8 -mt-20 -ml-20">
+            
+            {/* Left Accent */}
+            <div className="absolute left-0 top-0 h-full w-2 bg-tertiary rounded-l-2xl" />
+
+            {/* Text */}
+            <p className="font-headline text-lg md:text-xl text-on-surface leading-relaxed">
+              "The soul of the nation breathes in the ghats of the eternal city."
+            </p>
+
+          </div>
+        </div>
+        
+      </section>
+
+      {/* LIFE */}
+      <section className="py-32 px-6">
+        <h2 className="text-5xl font-bold mb-12">
+          And everything comes alive.
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <img src="/market.png" className="rounded-xl col-span-2" />
+          <img src="/food.png" className="rounded-xl" />
+        </div>
+      </section>
+
+      {/* HISTORY */}
+      <section className="py-32 bg-black text-white px-6">
+        <h2 className="text-6xl font-bold mb-6">
+          Still standing. Still speaking.
+        </h2>
+
+        <img src="/taj.png" className="rounded-xl mt-8" />
+      </section>
+
+      {/* CTA */}
+      <section className="py-32 text-center">
+        <h2 className="text-6xl font-bold mb-8">
+          Or you can experience it.
+        </h2>
+
+        <button className="bg-primary text-white px-10 py-4 rounded-full">
+          Explore Uttar Pradesh
+        </button>
+      </section>
+
+      <Footer />
+    </main>
   );
 }

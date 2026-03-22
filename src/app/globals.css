@@ -1,26 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;800&family=Manrope:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Manrope', sans-serif;
+  background: var(--surface);
+  color: var(--on-surface);
+}
+
+:root {
+  --primary: #8f4e00;
+  --primary-container: #ff9933;
+  --secondary: #3557bc;
+  --tertiary: #a93443;
+
+  --surface: #fff8f2;
+  --on-surface: #251a01;
+  --surface-variant: #f7e0b5;
+
+  --surface-container: #ffecc9;
+  --surface-container-low: #fff2de;
+  --surface-container-high: #fde5ba;
+  --surface-container-highest: #f7e0b5;
+
+  --on-surface-variant: #554336;
+}
+
+h1, h2, h3 {
+  font-family: 'Noto Serif', serif;
+}
+
+/* 🎯 CUSTOM UTILITIES (Tailwind-like classes) */
+@layer utilities {
+  .bg-primary { background-color: var(--primary); }
+  .bg-primary-container { background-color: var(--primary-container); }
+  .bg-secondary { background-color: var(--secondary); }
+  .bg-tertiary { background-color: var(--tertiary); }
+
+  .bg-surface { background-color: var(--surface); }
+  .bg-surface-variant { background-color: var(--surface-variant); }
+
+  .bg-surface-container { background-color: var(--surface-container); }
+  .bg-surface-container-low { background-color: var(--surface-container-low); }
+  .bg-surface-container-high { background-color: var(--surface-container-high); }
+  .bg-surface-container-highest { background-color: var(--surface-container-highest); }
+
+  .text-primary { color: var(--primary); }
+  .text-on-surface { color: var(--on-surface); }
+  .text-on-surface-variant { color: var(--on-surface-variant); }
+  .text-red{color: var(--tertiary);}
+  .border-primary { border-color: var(--primary); }
+}
+
+/* ✨ EXTRA EFFECTS */
+.glass-nav {
+  backdrop-filter: blur(12px);
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(37, 26, 1, 0.4),
+    rgba(37, 26, 1, 0.1)
+  );
 }
